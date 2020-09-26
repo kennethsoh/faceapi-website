@@ -37,4 +37,6 @@ $ node server.js
 
 3. Go to "127.0.0.1:3000/register" to register and add your own image
 
+4. Go to "127.0.0.1:3000/user" to access user settings.
+
 
