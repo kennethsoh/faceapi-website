@@ -112,9 +112,9 @@ function loadLabeledImages(){
   window.labels  = JSON.parse(sessionStorage.getItem("list"));
 
   // Error handling for no users registered, hence labels == 0.
-  // Define 'Rachel' as default labels value.
+  // Define 'Sheldon' as default labels value.
   if (labels === undefined || labels === null || labels.length == 0){
-    window.labels = ['Rachel'];
+    window.labels = ['Sheldon'];
   } 
   console.log(labels); // check that labels cannot be [] at this point.
   
