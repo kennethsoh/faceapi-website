@@ -17,17 +17,18 @@ This project, using <a href="https://github.com/justadudewhohacks/face-api.js/" 
 > CREATE TABLE IF NOT EXISTS logs.users (`userid` INT NOT NULL AUTO_INCREMENT,`username` VARCHAR(64) NOT NULL,`password` VARCHAR(64) NOT NULL,`imagelink` VARCHAR(64) NOT NULL,PRIMARY KEY (`userid`));
 ```
 
-5. Install additional required npm modules including body-parser, multer and rimraf
-```
-$ cd node_modules
-$ npm install <module_name>
-```
-
-6. Clone this repository
+5. Clone this repository
 ```
 $ git clone https://github.com/kennethsoh/faceapi-website.git
 $ cd faceapi-website
 ```
+
+6. Install additional required npm modules
+```
+$ npm install body-parser express fs multer mysql rimraf
+```
+
+
 ## Usage
 1. Start the node server and check that the database is connected
 ```
