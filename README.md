@@ -2,7 +2,6 @@
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
 This project, using <a href="https://github.com/justadudewhohacks/face-api.js/">faceapi</a>, is a proof-of-concept website.
-The website uses a mysql database to store users registration information
 
 ## Installation
 1. Read <a href="https://github.com/kennethsoh/faceapi-website/blob/master/LICENSE">license</a> terms before proceeding. 
@@ -15,7 +14,7 @@ The website uses a mysql database to store users registration information
 ```
 > CREATE DATABASE logs;
 > CREATE TABLE IF NOT EXISTS logs.logs (`logid` INT NOT NULL AUTO_INCREMENT,`name` VARCHAR(64) NOT NULL,`date` VARCHAR(64) NOT NULL,PRIMARY KEY (`logid`));
->CREATE TABLE IF NOT EXISTS logs.users (`userid` INT NOT NULL AUTO_INCREMENT,`username` VARCHAR(64) NOT NULL,`password` VARCHAR(64) NOT NULL,`imagelink` VARCHAR(64) NOT NULL,PRIMARY KEY (`userid`));
+> CREATE TABLE IF NOT EXISTS logs.users (`userid` INT NOT NULL AUTO_INCREMENT,`username` VARCHAR(64) NOT NULL,`password` VARCHAR(64) NOT NULL,`imagelink` VARCHAR(64) NOT NULL,PRIMARY KEY (`userid`));
 ```
 
 5. Install additional required npm modules including body-parser, multer and rimraf
@@ -29,5 +28,14 @@ $ npm install <module_name>
 $ git clone https://github.com/kennethsoh/faceapi-website.git
 $ cd faceapi-website
 ```
+## Usage
+1. Start the node server and check that the database is connected
+```
+$ node server.js
+```
+
+2. Open a web browser (preferably Chrome) and enter "127.0.0.1:3000" in the url space
+
+3. Go to "127.0.0.1:3000/register" to register and add your own image
 
 
