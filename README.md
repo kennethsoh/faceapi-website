@@ -1,14 +1,14 @@
 # faceapi-website
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
-This project, using <a href="https://github.com/justadudewhohacks/face-api.js/">faceapi</a>, is a proof-of-concept website.
+This project, using <a href="https://github.com/justadudewhohacks/face-api.js/" target="_blank">faceapi</a>, is a proof-of-concept website.
 
 ## Installation
-1. Read <a href="https://github.com/kennethsoh/faceapi-website/blob/master/LICENSE">license</a> terms before proceeding. 
+1. Read <a href="https://github.com/kennethsoh/faceapi-website/blob/master/LICENSE" target="_blank">license</a> terms before proceeding. 
 
-2. Install <a href="https://nodejs.org/en/download/">node.js</a>.
+2. Install <a href="https://nodejs.org/en/download/" target="_blank">node.js</a>.
 
-3. Install <a href="https://dev.mysql.com/downloads/mysql/">mysql server</a>
+3. Install <a href="https://dev.mysql.com/downloads/mysql/" target="_blank">mysql server</a>
 
 4. Set up mysql server, creating 1 database: "logs", and 2 tables: "logs" and "users". 
 ```
