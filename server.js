@@ -21,6 +21,11 @@ app.all('labeled_images', function(req, res) {
     res.redirect('/index.html'); 
   });
 
+// Redirect to index.html when navigated to 127.0.0.1:3000/
+app.get('/', function(req, res) { 
+    res.redirect('index.html'); 
+  });
+
 // Redirect to register.html when navigated to 127.0.0.1:3000/register
 app.get('/register', function(req, res) { 
     res.redirect('register.html'); 
