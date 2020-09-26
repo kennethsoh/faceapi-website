@@ -6,25 +6,27 @@ This project, using <a href="https://github.com/justadudewhohacks/face-api.js/" 
 ## Installation
 1. Read <a href="https://github.com/kennethsoh/faceapi-website/blob/master/LICENSE" target="_blank">license</a> terms before proceeding. 
 
-2. Install <a href="https://nodejs.org/en/download/" target="_blank">node.js</a> and <a href="https://dev.mysql.com/downloads/mysql/" target="_blank">mysql server</a>
+2. Clone this repository
+```
+$ git clone https://github.com/kennethsoh/faceapi-website.git
+$ cd faceapi-website
+```
 
-3. Set up mysql server, creating 1 database: "logs", and 2 tables: "logs" and "users". 
+3. Install <a href="https://nodejs.org/en/download/" target="_blank">node.js</a> and <a href="https://dev.mysql.com/downloads/mysql/" target="_blank">mysql server</a>
+
+4. Install additional required npm modules
+```
+$ npm install body-parser express fs multer mysql rimraf
+```
+
+5. Set up mysql server, creating 1 database: "logs", and 2 tables: "logs" and "users". 
 ```
 > CREATE DATABASE logs;
 > CREATE TABLE IF NOT EXISTS logs.logs (`logid` INT NOT NULL AUTO_INCREMENT,`name` VARCHAR(64) NOT NULL,`date` VARCHAR(64) NOT NULL,PRIMARY KEY (`logid`));
 > CREATE TABLE IF NOT EXISTS logs.users (`userid` INT NOT NULL AUTO_INCREMENT,`username` VARCHAR(64) NOT NULL,`password` VARCHAR(64) NOT NULL,`imagelink` VARCHAR(64) NOT NULL,PRIMARY KEY (`userid`));
 ```
 
-4. Clone this repository
-```
-$ git clone https://github.com/kennethsoh/faceapi-website.git
-$ cd faceapi-website
-```
-
-5. Install additional required npm modules
-```
-$ npm install body-parser express fs multer mysql rimraf
-```
+6. Depending on your mysql database setup, edit db_connection.js for the correct user and password.
 
 
 ## Usage
