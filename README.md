@@ -1,5 +1,5 @@
 # faceapi-website
-[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause) ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/kennethsoh/faceapi-website)
 
 This project, using <a href="https://github.com/justadudewhohacks/face-api.js/" target="_blank">faceapi</a>, is a proof-of-concept website.<br>
 The html files are minimally styled, and minimal directions are provided for page navigation. HTML pages can be accessed via the url for ('/index', '/login', '/register' and '/user'). 
