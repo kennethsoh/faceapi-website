@@ -1,0 +1,23 @@
+{
+  "name": "faceapi-website",
+  "version": "1.0.0",
+  "description": "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kennethsoh/faceapi-website.git"
+  },
+  "keywords": [
+    "faceapi"
+  ],
+  "author": "Kenneth Soh",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/kennethsoh/faceapi-website/issues"
+  },
+  "homepage": "https://github.com/kennethsoh/faceapi-website#readme"
+}
