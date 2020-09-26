@@ -1,7 +1,8 @@
 # faceapi-website
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
-This project, using <a href="https://github.com/justadudewhohacks/face-api.js/" target="_blank">faceapi</a>, is a proof-of-concept website.
+This project, using <a href="https://github.com/justadudewhohacks/face-api.js/" target="_blank">faceapi</a>, is a proof-of-concept website.<br>
+The html files are minimally styled, and minimal directions are provided for page navigation. HTML pages can be accessed via the url for ('/index', '/login', '/register' and '/user'). 
 
 ## Installation
 1. Read <a href="https://github.com/kennethsoh/faceapi-website/blob/master/LICENSE" target="_blank">license terms</a> before proceeding. 
