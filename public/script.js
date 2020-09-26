@@ -23,11 +23,8 @@ async function startVideo() {
 }
 
 var logName
-
-
 video.addEventListener('play', async () => {
-  
-
+ 
   const canvas = faceapi.createCanvasFromMedia(video)
   document.body.append(canvas)
 
@@ -39,7 +36,6 @@ video.addEventListener('play', async () => {
   var faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.5)
 
   setInterval(async () => {
-
     const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
     .withFaceLandmarks().withFaceExpressions().withAgeAndGender().withFaceDescriptors()
     const resizedDetections = faceapi.resizeResults(detections, displaySize)
@@ -76,6 +72,7 @@ function postLog(logName){
   .then(response => response.text())
 }
 
+// This function retrieves Labels by checking the list of usernames from mysql database
 function getLabels() {
   var list = [];
   var labelList = new Array;
@@ -103,7 +100,6 @@ function refreshLabels(){
 }
 
 function loadLabeledImages(){
-  
   getLabels().then((data) => {
     dataS = JSON.stringify(data);
     sessionStorage.setItem('list', dataS)
@@ -111,12 +107,12 @@ function loadLabeledImages(){
   
   window.labels  = JSON.parse(sessionStorage.getItem("list"));
 
-  // Error handling for no users registered, hence labels == 0.
+  // Error handling for no users registered, hence labels is undefined, null or empty.
   // Define 'Sheldon' as default labels value.
   if (labels === undefined || labels === null || labels.length == 0){
     window.labels = ['Sheldon'];
   } 
-  console.log(labels); // check that labels cannot be [] at this point.
+  console.log(labels); // check that labels cannot be [] or empty at this point.
   
   return Promise.all( 
     labels.map(async label => {
@@ -132,11 +128,7 @@ function loadLabeledImages(){
       };
       return new faceapi.LabeledFaceDescriptors(label, descriptions)
     })
-    
   )
-  
-  
-  
 }
 
 
