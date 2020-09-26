@@ -3,6 +3,7 @@ const path = require("path")
 var fs = require('fs')
 var multer = require('multer')
 
+
 function routeLogs(app)
 {
     app.post('/postlog', function(req, response) {
@@ -18,11 +19,10 @@ function routeLogs(app)
                 message = {"code":"success"};
                 response.json(message)
             }
-
     });
-
 });
-    // visit http://127.0.0.1:3000/getlogs to see all data in DB.
+    
+    // visit http://127.0.0.1:3000/getlogs to see all logs data in database.
     app.get('/getlogs', function(request, response) {
     var sql = "SELECT * FROM logs";
     db.query(sql, function(error, results){
@@ -31,44 +31,47 @@ function routeLogs(app)
         } else {
             response.json(results);
         }
-    
     });
 });
 
 
-// Disk Storage options for uploaded image
+// Disk Storage options for uploaded image during registration
 var storage = multer.diskStorage({ 
     destination: function (req, file, cb) { 
         var fs = require('fs');
+        
+        // Remove file extensions (.jpg, .png, .jpeg) from filename
         var user = file.originalname.replace('.jpg','')
         var user = user.replace('.png','')
         var user = user.replace('.jpeg','')
         var user = user.toLowerCase();
         console.log(user)
+        
+        /* NOTE: 
+        It is important that the user's images is named after his username (i.e. sheldon.jpg), 
+        Otherwise, the directory folder created here will not match with the user's registered username in DB, and faceapi will not recognise the user. */
         var dir = 'public/labeled_images/'+user;
-
+        
+        // Create new directory/folder for storage of uploaded image.
         if (!fs.existsSync(dir)){
             fs.mkdirSync(dir);
         }
-  
-        // Uploads is the Upload_folder_name 
         cb(null, dir) 
     }, 
     filename: function (req, file, cb) { 
-      cb(null, "1.jpg") 
+      cb(null, "1.jpg") // uploaded images are renamed '1.jpg' 
     } 
   }) 
 
-
-
-const maxSize = 1 * 10000 * 10000; //maximum file size
-// Upload using multer
+const maxSize = 1 * 10000 * 10000; // maximum image file size
+    
+// multer upload options for uploaded image during registration
 var upload = multer({  
     storage: storage, 
     limits: { fileSize: maxSize }, 
     fileFilter: function (req, file, cb){ 
     
-        // Set the filetypes, it is optional 
+        // Set the accepted filetypes
         var filetypes = /jpeg|jpg|png/; 
         var mimetype = filetypes.test(file.mimetype); 
   
@@ -95,13 +98,13 @@ var upload = multer({
         return db.query(sql,[username, password, imagelink], function(error, results){
             if (error){
                 response.json(error)
-
             } else {
                 response.redirect("/login.html");
             }
         });
 });
 
+// Disk Storage options for uploaded image during user update 
 var storageupdate = multer.diskStorage({ 
     destination: function (req, file, cb) { 
         var fs = require('fs');
@@ -112,7 +115,7 @@ var storageupdate = multer.diskStorage({
         console.log(user)
         var dir = 'public/labeled_images/'+user;
 
-        // delete all files belonging to user
+        // delete all existing files and folder belonging to user
         var rimraf = require("rimraf");
         rimraf.sync("public/labeled_images/"+user);
 
@@ -130,6 +133,7 @@ var storageupdate = multer.diskStorage({
     } 
   }) 
 
+// multer upload options for uploaded image during registration
 var update = multer({  
     storage: storageupdate, 
     limits: { fileSize: maxSize }, 
@@ -188,10 +192,7 @@ var update = multer({
                 message = "no user"; 
                 console.log(message); 
                 response.json(message)
-
                 }
-            
-        
             });
     });
 
@@ -204,7 +205,6 @@ var update = multer({
                 response.json(results);
             }
         });
-
     });
 
     app.post('/deleteuser/', function(request, response){
@@ -214,7 +214,7 @@ var update = multer({
         console.log("Username: "+username);
         var sql = "DELETE from users WHERE userid = " + userid;
 
-        // Delete user folder (similar to rm -rf)
+        // delete all existing files and folder belonging to user
         var rimraf = require("rimraf");
         rimraf.sync("public/labeled_images/"+username);
 
