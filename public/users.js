@@ -31,6 +31,8 @@ function login() {
             // create session for user
             sessionStorage.setItem('username', user);
             sessionStorage.setItem('user_id', user_id);
+            
+            // redirect to user.html after successful login
             window.location = "user.html";
         } else if (pass != password) {
             console.log("failure");
@@ -43,18 +45,25 @@ function login() {
 }
 }
 
+
 function show_username() {
     var check = sessionStorage.getItem("user_id");
+    
+    // Check if user is logged in
     if (check == null){
+    // If user is not logged in, redirect to login.html
         window.location = "/login.html";
     } else {
+    // If user is logged in, get username to display on page
     var username = sessionStorage.getItem("username");
     var userfield = document.getElementById("username");
     userfield.innerHTML = 'Welcome ' + username;
     }
 }
 
-
+/* Check if a user is in an existing session
+This function is used on login.html and register.html. 
+If a user is already in session, he will be redirected to user.html to prevent double login. */
 function checkInSession() {
     var check = sessionStorage.getItem("user_id");
     if (check != null){
@@ -99,7 +108,6 @@ function setuserid(){
     var useridfield = document.getElementById("useridfield");
     useridfield.value =  userid;
 }
-
 
 function goUpdateUser(){
     window.location="/updateuser.html";
