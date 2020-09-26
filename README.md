@@ -26,7 +26,7 @@ $ npm install body-parser express fs multer mysql rimraf
 > CREATE TABLE IF NOT EXISTS logs.users (`userid` INT NOT NULL AUTO_INCREMENT,`username` VARCHAR(64) NOT NULL,`password` VARCHAR(64) NOT NULL,`imagelink` VARCHAR(64) NOT NULL,PRIMARY KEY (`userid`));
 ```
 
-6. Depending on your mysql database setup, edit db_connection.js for the correct user and password.
+6. Depending on your mysql database setup, edit <a href="https://github.com/kennethsoh/faceapi-website/blob/master/db_connection.js" target="_blank">db_connection.js</a> for the correct user and password.
 
 
 ## Usage
