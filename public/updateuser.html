@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Face Detection Register</title>
+  <script defer src="face-api.min.js"></script>
+  <script src="users.js"></script>
+  <div class="w3-row">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload=setuserid()>
+<h3>Face Recognition Users Profile</h3>
+  <div class="">
+            <h5 id="username" style="text-align: center" class="" </h5>
+            <br>
+        </div>
+        </div>
+        <br>
+        <div style="text-align:center">
+            <button id="homeButton" onclick="home()">Go Home</button>
+        </div>
+        <br>
+        <form action="/updateuser" enctype="multipart/form-data" method="POST">
+            <input id="useridfield" type="hidden" name="useridfield">
+            <input class="credentialsInput" id="updatePass" type="password" name="updatepassword" placeholder="New Password" autocomplete="off" required/><br><br>
+            <input class="credentialsInput" id="updateImage" type="file" name="updateImage" required="yes"/><br><br>
+            <button id="Button" class="loginButton" type="submit" style="width:120px, padding:10px" >Update</button>
+        </form>
+</body>
+</html>
+

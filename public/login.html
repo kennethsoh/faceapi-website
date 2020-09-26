@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Face Detection Register</title>
+  <script defer src="face-api.min.js"></script>
+  <script src="users.js"></script>
+  <div class="w3-row">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="checkInSession()">
+<h3>Face Recognition Login</h3>
+  <div class="loginUserForm1">
+        <br>
+            <input class="credentialsInput" id="usernameLogin" type="text" name="" placeholder="Username" autocomplete="off" required="yes" autofocus/><br><br>
+            <input class="credentialsInput" id="passwordLogin" type="password" name="" placeholder="Password" autocomplete="off" required="yes"/><br><br>
+            <h6 style="font-size:10px">Don't have an Account?  <a style="font-size:10px" href="register.html">Register here</a></h6><br>
+            <button class="loginButton" id="Button" type="submit" style="width:120px, padding:10px" onclick="login()">Login</button>
+        </div>
+</body>
+</html>
+
