@@ -33,6 +33,8 @@ $ npm install body-parser express fs multer mysql rimraf
 1. Start the node server and check that the database is connected
 ```
 $ node server.js
+Application listening at http://127.0.0.1:3000 ; enter CTRL + C to stop
+Database Connected!
 ```
 
 2. Open a web browser (preferably Chrome) and enter "127.0.0.1:3000" in the url space
