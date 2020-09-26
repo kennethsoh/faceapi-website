@@ -1,22 +1,30 @@
 # faceapi-website
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+
 This project, using <a href="https://github.com/justadudewhohacks/face-api.js/">faceapi</a>, is a proof-of-concept website.
 The website uses a mysql database to store users registration information
 
 ## Installation
-1. Install <a href="https://nodejs.org/en/download/">node.js</a>.
+1. Read <a href="https://github.com/kennethsoh/faceapi-website/blob/master/LICENSE">license</a> terms before proceeding. 
 
-2. Install <a href="https://dev.mysql.com/downloads/mysql/">mysql server</a>
+2. Install <a href="https://nodejs.org/en/download/">node.js</a>.
 
-2a. Set up mysql server, creating 1 database: "logs", and 2 tables: "logs" and "users". Follow the commands in "/public/commands.sql"
+3. Install <a href="https://dev.mysql.com/downloads/mysql/">mysql server</a>
 
-3. Install additional required npm modules (multer, rimraf, body-parser)
+4. Set up mysql server, creating 1 database: "logs", and 2 tables: "logs" and "users". 
+```
+> CREATE DATABASE logs;
+> CREATE TABLE IF NOT EXISTS logs.logs (`logid` INT NOT NULL AUTO_INCREMENT,`name` VARCHAR(64) NOT NULL,`date` VARCHAR(64) NOT NULL,PRIMARY KEY (`logid`));
+>CREATE TABLE IF NOT EXISTS logs.users (`userid` INT NOT NULL AUTO_INCREMENT,`username` VARCHAR(64) NOT NULL,`password` VARCHAR(64) NOT NULL,`imagelink` VARCHAR(64) NOT NULL,PRIMARY KEY (`userid`));
+```
+
+5. Install additional required npm modules including body-parser, multer and rimraf
 ```
 $ cd node_modules
 $ npm install <module_name>
 ```
 
-4. Clone this repository
+6. Clone this repository
 ```
 $ git clone https://github.com/kennethsoh/faceapi-website.git
 $ cd faceapi-website
