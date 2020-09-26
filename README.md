@@ -4,15 +4,15 @@
 This project, using <a href="https://github.com/justadudewhohacks/face-api.js/" target="_blank">faceapi</a>, is a proof-of-concept website.
 
 ## Installation
-1. Read <a href="https://github.com/kennethsoh/faceapi-website/blob/master/LICENSE" target="_blank">license</a> terms before proceeding. 
+1. Read <a href="https://github.com/kennethsoh/faceapi-website/blob/master/LICENSE" target="_blank">license terms</a> before proceeding. 
 
-2. Clone this repository
+2. Clone or download this repository and navigate to its folder.
 ```
 $ git clone https://github.com/kennethsoh/faceapi-website.git
 $ cd faceapi-website
 ```
 
-3. Install <a href="https://nodejs.org/en/download/" target="_blank">node.js</a> and <a href="https://dev.mysql.com/downloads/mysql/" target="_blank">mysql server</a>
+3. Install <a href="https://nodejs.org/en/download/" target="_blank">node.js</a> and <a href="https://dev.mysql.com/downloads/mysql/" target="_blank">mysql server</a>.
 
 4. Install additional required npm modules
 ```
