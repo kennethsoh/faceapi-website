@@ -4,7 +4,7 @@
 This project, using <a href="https://github.com/justadudewhohacks/face-api.js/" target="_blank">faceapi</a>, is a proof-of-concept website.<br>
 The HTML files are minimally styled, and minimal directions are provided for page navigation.
 
-***Important:*** This website is not designed for deployment, hence it has *not* secure by design.
+***Important:*** This website is not designed for deployment, hence it is *not* secure by design.
 
 ## Installation
 1. Read <a href="https://github.com/kennethsoh/faceapi-website/blob/master/LICENSE" target="_blank">license terms</a> before proceeding. 
